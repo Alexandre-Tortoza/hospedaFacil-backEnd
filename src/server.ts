@@ -3,6 +3,9 @@ import { sql } from "./config/db";
 
 const testDatabaseConnection = async () => {
   try {
+    console.log(
+      "______________________________________________________________________________\n"
+    );
     console.log("🔄 Testando conexão com o banco de dados...");
 
     const result = await sql`SELECT NOW() as now`;
@@ -28,10 +31,6 @@ const startServer = async () => {
 
     console.log(`
 🚀 O SERVIDOR ESTÁ RODANDO!
-\n\n\n
-______________________________________________________________________________
-
-< > Bem-vindo ao Ciberespaço </>
 ______________________________________________________________________________
 
 ⠀⠀⠀⠀⠀⠀⠀⠄⣀⠢⢀⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⡔⢀⠂⡜⢭⢻⣍⢯⡻⣝⣿⣿⡿⣟⠂
@@ -69,17 +68,16 @@ ______________________________________________________________________________
 ⣇⢾⡱⠞⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⡇⠀⠀⠀⠉⠛⠳⠿⣶⣽⣿⣿⣿⣿⣿⣿⣿⣿
 ______________________________________________________________________________
 
-dotenv.config();
-  [Local] - Swagger: http://localhost:3333/swagger
+[Local] - Swagger: http://localhost:3333/swagger
 
-  [Produção] - Swagger: Indisponível! 
+[Produção] - Swagger: https://hospedafacil-backend.onrender.com/swagger 
 
 
 Desenvolvido por: https://github.com/Alexandre-Tortoza
 ______________________________________________________________________________
     `);
   } catch (error) {
-    console.error("❌ Erro ao iniciar o servidor:", error);
+    console.error("❌ Erro ao iniciar o servidor:\n", error + "\n");
     process.exit(1);
   }
 };

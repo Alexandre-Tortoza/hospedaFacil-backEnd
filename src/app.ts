@@ -9,7 +9,7 @@ import { fastifySwagger } from "@fastify/swagger";
 import { fastifySwaggerUi } from "@fastify/swagger-ui";
 import jwt from "@fastify/jwt";
 import dotenv from "dotenv";
-// import { routes } from "./routes/routes";
+import { routes } from "./routes/routes";
 
 dotenv.config();
 
@@ -53,6 +53,6 @@ app.register(fastifySwaggerUi, {
   routePrefix: "/swagger",
 });
 
-// app.register(routes);
+app.register(routes);
 
 export default app;

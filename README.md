@@ -5,3 +5,4 @@ pnpm install dotenv
 npm install @neondatabase/serverless
 pnpm install @fastify/jwt
 pnpm install bcryptjs
+npm install --save-dev @types/bcryptjs
